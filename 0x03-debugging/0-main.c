@@ -1,19 +1,17 @@
 #include "main.h"
 
 /**
- *
  * main - check if function gives correct output
- * @i: the integer to be passed to the function
- *
+ * Return: 0
  */
 
 int main(void)
 {
-  int i;
-  
-  i = 0;
-  positive_or_negative(i);
+int i;
 
-  return (0);
+i = 0;
+positive_or_negative(i);
+
+return (0);
 }
 
