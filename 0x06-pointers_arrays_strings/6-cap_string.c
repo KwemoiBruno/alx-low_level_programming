@@ -10,16 +10,16 @@
 char *cap_string(char *str)
 {
 	char *ptr = str;
+	int i = 0;
 
-	if (str == NULL)
+	while (*ptr)
 	{
-		return (0);
+		if (i == 0 || !isalnum(*(ptr - 1)))
+		{
+			*ptr = toupper(*ptr);
+		}
+		i++;
+		ptr++;
 	}
-
-	while (*str != '\0')
-	{
-		*str = toupper(*str);
-		str++;
-	}
-	return (ptr);
+	return (str);
 }
