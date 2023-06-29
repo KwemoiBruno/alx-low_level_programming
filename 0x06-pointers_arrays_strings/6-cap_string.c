@@ -9,17 +9,24 @@
  */
 char *cap_string(char *str)
 {
-	char *ptr = str;
 	int i = 0;
+	int next = 1;
 
-	while (*ptr)
+	while (str[i] != '\0')
 	{
-		if (i == 0 || !isalnum(*(ptr - 1)))
+		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',' ||
+		    str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
+		    str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+		    str[i] == '}')
 		{
-			*ptr = toupper(*ptr);
+			next = 1;
+		}
+		else if (next)
+		{
+			str[i] = toupper(str[i]);
+			next = 0;
 		}
 		i++;
-		ptr++;
 	}
 	return (str);
 }
