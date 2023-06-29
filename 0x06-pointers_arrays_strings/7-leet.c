@@ -7,20 +7,23 @@
  */
 char *leet(char *str)
 {
-	int i;
+	int i, j;
 	char *ptr = str;
-	char leet[5] = {'4', '3', '0', '7', '1'};
-	char letters[5] = {'a', 'e', '0', 't', 'l'};
+	char leet[] = "433710";
+	char letters[] = "aeotlAEOTL";
 
 	for (; *ptr != '\0'; ptr++)
 	{
-		for (i = 0; i < 5; i++)
+		i = 0;
+		j = 0;
+		while (i < 5 && j == 0)
 		{
-			if (*ptr == letters[i] || *ptr == letters[i] - 'a' + 'A')
-			{
-				*ptr = leet[i];
-				break;
-			}
+			j = (*ptr == letters[i]) ? 1 : 0;
+			i++;
+		}
+		if (j == 1)
+		{
+			*ptr = leet[i - 1];
 		}
 	}
 	return (str);
