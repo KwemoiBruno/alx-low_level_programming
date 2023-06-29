@@ -1,4 +1,3 @@
-#include <string.h>
 /**
  * leet - encodes a string into 1337
  * @str: string to be encoded
@@ -18,7 +17,14 @@ char *leet(char *str)
 		j = 0;
 		while (i < 5 && j == 0)
 		{
-			j = (*ptr == letters[i]) ? 1 : 0;
+			if (*ptr == letters[i])
+			{
+				j = 1;
+			}
+			else if (*ptr == letters[i + 5])
+			{
+				j = 1;
+			}
 			i++;
 		}
 		if (j == 1)
