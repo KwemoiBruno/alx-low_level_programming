@@ -5,7 +5,7 @@
  * @s: string to be scanned
  * @accept: string characters to match
  *
- * Returns: number of characters
+ * Return: number of characters
  */
 unsigned int _strspn(char *s, char *accept)
 {
